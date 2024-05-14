@@ -1,0 +1,345 @@
+:root {
+    /* secundaire palette */
+    --BGcolor:#272932;
+    --PrimaryColor:#947eb0;
+    --Secondarycolor:#519879;
+    --TextColor:#ecf8f8;
+    --Accentcolor:#fb8b24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--BGcolor);
+    color: var(--TextColor);
+    font-family: halton, sans-serif;
+    
+    
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--TextColor);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  padding: 1.5em;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 1.5em;
+}
+
+p {
+  font-family: halton-italic, sans-serif;
+  font-size: 1em;
+
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  margin: 3em;
+  transition: box-shadow 0.1s;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+section  {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding: 3.5em;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+nav {
+    border-bottom: 1px solid var(--Accentcolor);
+    & ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        & li {
+            padding: .8em;
+
+            & a {
+                color: var(--TextColor);
+                text-decoration: none;
+                font-family: halton-italic, sans-serif;
+            }
+        }
+    }
+}
+
+nav:focus {
+  outline: 4px solid var(--Secondarycolor);
+}
+
+.clickable-image {
+    height: auto;
+    cursor: pointer;
+    margin: 1.19em;
+    transition: transform 0.3s ease-in-out; 
+    border-radius: 5px;
+    filter: grayscale(0%); 
+  }
+  
+  .clickable-image.selected{
+    filter: grayscale(100%); 
+  }
+  
+  .clickable-image:hover {
+    transform: scale(1.05);
+  }
+
+  .vragenlijst-btn{
+    width: 50%;
+    padding: 15px;
+    background-color: var(--PrimaryColor);
+    border: none;
+    color: rgb(0, 0, 0);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: halton, sans-serif;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+  
+  .vragenlijst-btn:hover {
+    background-color: var(--Secondarycolor);
+    color: var(--TextColor);
+  }
+
+  .vragenlijst-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+.stakeholder-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--PrimaryColor);
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: halton, sans-serif;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--Accentcolor);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+input:checked + img {
+  box-shadow: 0 0 0 10px var(--PrimaryColor);
+  transition: box-shadow 0.11s;
+}
+
+input[type='submit'] {
+  width: 100%;
+  padding: 0.5em;
+  font-family: halton, sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 2px solid var(--Accentcolor);
+  background-color: var(--BGcolor);
+  color: var(--TextColor);
+}
+
+input[type='submit']:hover {
+  background-color: var(--Secondarycolor);
+  color: var(--TextColor);
+  cursor: pointer;
+}
+
+.result {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row;
+  flex-wrap: nowrap;
+}
+
+#favDialog {
+  padding: 1em;
+  max-width: 500ch;
+  background-color: var(--BGcolor);
+
+  & > *{
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+#favDialog::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.55;
+}
+
+.open-button {
+  width: 10%;
+  padding: 15px;
+  background-color: var(--PrimaryColor);
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: halton, sans-serif;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.open-button:hover {
+  background-color: var(--Secondarycolor);
+  color: var(--TextColor);
+  font-weight: bold;
+}
+
+.close-button {
+  width: 15%;
+  padding: 15px;
+  background-color: var(--PrimaryColor);
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: halton, sans-serif;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.close-button:hover {
+  background-color: var(--Secondarycolor);
+  color: var(--TextColor);
+  font-weight: bold;
+}
+
+option {
+  padding: 0;
+}
+
+input[type="range"] {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  margin: 0;
+
+  & p {
+    width: 100%;
+  }
+}
+
+& datalist {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+  width: 100%;
+  color: #fff;
+  & option {
+      rotate: -90deg;
+      /* color: red; */
+      font-weight: bold;
+      &[label="0"] {
+          font-weight: normal;
+      }
+  }
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--Accentcolor);
+  height: 0.8rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 1.8em;
+  width: 1.8em;
+  background-color: var(--PrimaryColor);
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+input[type="range"] > label {
+  color: var(--TextColor);
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  border: 1px solid var(--Secondarycolor);
+  outline: 3px solid var(--Secondarycolor);
+  outline-offset: 0.125rem;
+}
+
