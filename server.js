@@ -19,14 +19,23 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 
 // Stel het basis endpoint in
-const apiUrl = 'https://fdnd-agency.directus.app/items'
-const sdgs = []
+const apiUrl = 'https://fdnd-agency.directus.app/items';
+const sdgs = [];
+const sdgList = apiUrl + "hf_sdgs";
+const scores = apiUrl + "hf_scores";
+const stakeholders = apiUrl + "hf_stakeholders";
+const companies = apiUrl + "hf_companies";
+
 
 
 
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
-  response.render('index');
+    fetchJson(sdgList).then((sdgDataUitDeAPI) => {
+        fetchJson(companies).then((companiesUitDeAPI) => {
+            response.render("index", {sdgs: sdgDataUitDeAPI.data, companies: companiesUitDeAPI.data});
+        });  
+    });
 });
 
 app.get('/dashboard', function (request, response) {
