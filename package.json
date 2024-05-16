@@ -26,7 +26,10 @@
   },
   "homepage": "https://github.com/fdnd-task/pleasurable-ui#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "ejs": "^3.1.10",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   }
 }

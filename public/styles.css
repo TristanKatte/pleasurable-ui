@@ -281,20 +281,6 @@ input[type='submit']:hover {
   font-weight: bold;
 }
 
-option {
-  padding: 0;
-}
-
-fieldset {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
-}
-
-input[type="radio"]{
-  padding: 1.5em;
-}
-
 input[type="range"] {
   appearance: none;
   background: transparent;
